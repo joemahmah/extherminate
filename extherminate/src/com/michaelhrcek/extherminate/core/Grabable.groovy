@@ -20,19 +20,9 @@ package com.michaelhrcek.extherminate.core
  *
  * @author mhrcek
  */
-class Grabable extends Interactable{
+class Grabable implements Interactable{
 	
-    Grabable(name) {
-        super(name)
-    }
     
-    Grabable(name, description){
-        super(name, description)
-    }
-    
-    Grabable(name, description, action){
-        super(name, description, action)
-    }
     
 }
 

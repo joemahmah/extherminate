@@ -20,13 +20,8 @@ package com.michaelhrcek.extherminate.core
  *
  * @author mhrcek
  */
-class Nongrabable extends Interactable{
-    Nongrabable(name) {
-        super(name)
-    }
+class Nongrabable implements Interactable{
     
-    Nongrabable(name, description){
-        super(name, description)
-    }
+    
 }
 

@@ -20,29 +20,10 @@ package com.michaelhrcek.extherminate.core
  *
  * @author mhrcek
  */
-class Interactable {
+trait Interactable {
     String name
     String description
     String action = null
-        
-    Interactable(name) {
-        this.name = name
-    }
-    
-    Interactable(name, description){
-        this.name = name
-        this.description = description
-    }
-    
-    Interactable(name, description, action){
-        this.name = name
-        this.description = description
-        this.action = action
-    }
-    
-    def setDescription(description){
-        this.description = description
-    }
     
     def hasAction(){
         return action != null

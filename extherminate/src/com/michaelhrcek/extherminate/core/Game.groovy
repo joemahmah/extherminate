@@ -39,18 +39,19 @@ class Game {
         l5.setConnections([l4])
         l6.setConnections([14])
         
-        l1.addInteractable(new Person("DOBBY","Dobby is in the corner."))
-        l1.addInteractable(new Person("GRM","GRM is sitting at the table."))
-        l1.addInteractable(new Grabable("GRM'S COMPUTER","GRM's Computer seems to have ponies on the screen."))
-        l1.addInteractable(new Person("FATMAN","In a large chair sits Fatman."))
-        l1.addInteractable(new Grabable("PAINTING","A wet oil painting of mountains is in the corner. It may not be a good idea to touch it..."))
-        l1.addInteractable(new Grabable("THERMOSTAT","The thermostat sits on the wall. It mocks you. Maybe...","You rip the thermostat off the wall."))
-        l1.addInteractable(new Grabable("RADIO","An old radio sits on the window.","You toggle the radio."))
-        l1.addInteractable(new Grabable("WINDOW","","You smash the window."))
+        l1.addInteractable(new Person(name:"DOBBY",description:"Dobby is in the corner."))
+        l1.addInteractable(new Person(name:"GRM",description:"GRM is sitting at the table."))
+        l1.addInteractable(new Grabable(name:"GRM'S COMPUTER",description:"GRM's Computer seems to have ponies on the screen."))
+        l1.addInteractable(new Person(name:"FATMAN",description:"In a large chair sits Fatman."))
+        l1.addInteractable(new Grabable(name:"PAINTING",description:"A wet oil painting of mountains is in the corner. It may not be a good idea to touch it..."))
+        l1.addInteractable(new Grabable(name:"THERMOSTAT",description:"The thermostat sits on the wall. It mocks you. Maybe...",action:"You rip the thermostat off the wall."))
+        l1.addInteractable(new Grabable(name:"RADIO",description:"An old radio sits on the window.",action:"You toggle the radio."))
+        l1.addInteractable(new Nongrabable(name:"WINDOW",description:"",action:"You smash the window."))
+        l1.addInteractable(new Grabable(name:"BRUSH",description:"A dirty brush sits on the table.",action:"You beat the devil out of the brush."))
         
-        l2.addInteractable(new Person("BEN","You can see Ben. He appears to be triggered..."))
-        l2.addInteractable(new Person("ALAN","Alan is sitting near Ben. He is rambles on about the GPL."))
-        l2.addInteractable(new Grabable("WINDOW",""))
+        l2.addInteractable(new Person(name:"BEN",description:"You can see Ben. He appears to be triggered..."))
+        l2.addInteractable(new Person(name:"ALAN",description:"Alan is sitting near Ben. He is rambles on about the GPL."))
+        l2.addInteractable(new Grabable(name:"WINDOW",description:""))
         
         ArrayList<Location> locations = [l1,l2,l3,l4,l5,l6]
         
@@ -102,7 +103,8 @@ class Game {
                     HELP\n\
                     LOOK\n\
                     INTERACT\n\
-                    MOVE
+                    MOVE\n\
+                    GRAB
                     """
             }else{
                 println "Does not compute!"

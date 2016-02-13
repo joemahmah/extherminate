@@ -20,19 +20,9 @@ package com.michaelhrcek.extherminate.core
  *
  * @author mhrcek
  */
-class Person extends Interactable{
+class Person implements Interactable{
 	
-    Person(name){
-        super(name)
-    }
     
-    Person(name,description){
-        super(name,description)
-    }
-    
-    Person(name,description, action){
-        super(name,description, action)
-    }
     
 }
 
