@@ -44,10 +44,10 @@ class Game {
         l1.addInteractable(new Grabable(name:"GRM'S COMPUTER",description:"GRM's Computer seems to have ponies on the screen."))
         l1.addInteractable(new Person(name:"FATMAN",description:"In a large chair sits Fatman."))
         l1.addInteractable(new Grabable(name:"PAINTING",description:"A wet oil painting of mountains is in the corner. It may not be a good idea to touch it..."))
-        l1.addInteractable(new Grabable(name:"THERMOSTAT",description:"The thermostat sits on the wall. It mocks you. Maybe...",action:"You rip the thermostat off the wall."))
-        l1.addInteractable(new Grabable(name:"RADIO",description:"An old radio sits on the window.",action:"You toggle the radio."))
-        l1.addInteractable(new Nongrabable(name:"WINDOW",description:"",action:"You smash the window."))
-        l1.addInteractable(new Grabable(name:"BRUSH",description:"A dirty brush sits on the table.",action:"You beat the devil out of the brush."))
+        l1.addInteractable(new Grabable(name:"THERMOSTAT",description:"The thermostat sits on the wall. It mocks you. Maybe...",actions:[new Action(name:"Grab",description:"You rip the thermostat off the wall.",action:{-> println "rip"}),new Action(name:"Toggle",description:"You toggle the thermostat.", action:{-> println "gg"})]))
+        l1.addInteractable(new Grabable(name:"RADIO",description:"An old radio sits on the window."))
+        l1.addInteractable(new Nongrabable(name:"WINDOW",description:""))
+        l1.addInteractable(new Grabable(name:"BRUSH",description:"A dirty brush sits on the table."))
         
         l2.addInteractable(new Person(name:"BEN",description:"You can see Ben. He appears to be triggered..."))
         l2.addInteractable(new Person(name:"ALAN",description:"Alan is sitting near Ben. He is rambles on about the GPL."))
@@ -73,7 +73,11 @@ class Game {
                     if(newObject){
                         //lm.setCurrentLocation(newObject)
                         if(newObject.hasAction()){
-                            println newObject.action
+                            println "What would you like to do with ${newObject.name}"
+                            println newObject.listActions()
+                            
+                            input = System.in.newReader().readLine()
+                            newObject.doAction(input)
                         } else {
                             println "You beat the everliving fuck out of ${newObject.name}"
                         }

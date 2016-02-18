@@ -20,35 +20,10 @@ package com.michaelhrcek.extherminate.core
  *
  * @author mhrcek
  */
-trait Interactable {
-    String name
-    String description
-    def actions = null
-    
-    def hasAction(){
-        return actions != null
-    }
-    
-    def listActions(){
-        def actionNames = new ArrayList<String>()
+class Action {
+	String name
+        String description
         
-        for(action in actions){
-            actionNames.add(action.name)
-        }
-        
-        return actionNames
-    }
-    
-    def doAction(action){
-        for(act in actions){
-            if(act.name.equals(action)){
-                act.action.call()
-            }
-        }
-    }
-    
-    String toString(){
-        return name
-    }
+        def action
 }
 
